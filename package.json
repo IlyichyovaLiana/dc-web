@@ -1,0 +1,24 @@
+{
+  "name": "doctor-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@icon/icofont": "^1.0.1-alpha.1",
+    "antd": "^5.22.2",
+    "aos": "^2.3.4",
+    "bootstrap": "^4.6.0",
+    "firebase": "^11.1.0",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-firebase-hooks": "^5.1.1",
+    "react-firebaseui": "^6.0.0",
+    "styled-components": "^6.1.14"
+  }
+}
