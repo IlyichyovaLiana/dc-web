@@ -1,4 +1,4 @@
-import { AdminHeroBanner, DashboardLayout } from "@/components";
+import { AdminHeroBanner } from "@/components";
 
 const AdminHeroBannerPage = () => {
   return <AdminHeroBanner />;

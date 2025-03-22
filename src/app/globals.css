@@ -454,6 +454,10 @@ a:focus {
   flex-direction: column;
 }
 
+.navbar-brand:hover {
+  color: #444444;
+}
+
 .navbar-brand img {
   max-height: 60px;
   background-color: #ddd;
@@ -536,7 +540,6 @@ a:focus {
   position: relative;
   overflow: hidden;
   background: #fff;
-  /* background: url("/images/bg/slider-bg-1.jpg") no-repeat; */
   background-size: cover;
   min-height: 550px;
 }
@@ -934,7 +937,6 @@ a:focus {
 }
 
 .cta {
-  background: url("/public/images/bg/bg-4.jpg") no-repeat 50% 50%;
   background-size: cover;
   position: relative;
 }
@@ -1554,7 +1556,7 @@ a:focus {
   display: inline-block;
   text-align: center;
   border-radius: 100%;
-  padding-top: 12px;
+  padding-top: 10px;
 }
 
 .widget-contact h6 {
@@ -1609,4 +1611,36 @@ a:focus {
   transition: all 0.3s;
   cursor: pointer;
   opacity: 1;
+}
+
+/* You can put this in Preloader.css and import it in your component */
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f8f9fa; /* Light background */
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.spinner-custom {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top-color: #3874ff; /* Bootstrap primary color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

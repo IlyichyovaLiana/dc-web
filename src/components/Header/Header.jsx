@@ -1,12 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
-
+import { useGlobalContext } from "@/contexts";
 import Aos from "aos";
 
 import "aos/dist/aos.css";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const headerData = useGlobalContext() || {};
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -22,7 +24,6 @@ const Header = () => {
   };
 
   useEffect(() => {
-    // AOS Scroll Animation
     Aos.init({
       offset: 1,
       duration: 1000,
@@ -39,7 +40,6 @@ const Header = () => {
     { name: "Вопросы", id: "popular-questions" },
     { name: "Контакты", id: "contact-us" },
   ];
-
   return (
     <header>
       <nav
@@ -47,12 +47,9 @@ const Header = () => {
         id="navbar"
       >
         <div className="container">
-          <a
-            className="navbar-brand d-flex align-items-center"
-            href="#heroBanner"
-          >
-            <p className="logo-title mb-0 p-0">А. А. Асатрян.</p>
-            <p> Бариатрический хирург</p>
+          <a className="navbar-brand d-flex" href="#heroBanner">
+            <p className="logo-title mb-0 p-0">{headerData?.name}</p>
+            <p>{headerData?.subName}</p>
           </a>
 
           <button

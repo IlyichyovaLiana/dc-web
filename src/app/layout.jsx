@@ -1,13 +1,14 @@
 "use client";
 
-import { Inter, Poppins } from "next/font/google";
+import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 import "bootstrap/dist/css/bootstrap.css";
 import "@icon/icofont/icofont.css";
 import "./globals.css";
 
-import { usePathname } from "next/navigation";
+import { Inter, Poppins } from "next/font/google";
 import { RouterPaths } from "@/utils";
+import { GlobalProvider } from "@/contexts";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -25,7 +26,7 @@ const DashboardLayout = dynamic(() => import("@/components/DashboardLayout"), {
   ssr: false,
 });
 
-export default function RootLayout({ children }) {
+function RootLayout({ children }) {
   const route = usePathname();
 
   const isNoLayoutRoute =
@@ -46,13 +47,15 @@ export default function RootLayout({ children }) {
             )}
           </AuthGuard>
         ) : (
-          <>
+          <GlobalProvider>
             <Header />
-            <main>{children}</main>
+            {children}
             <Footer />
-          </>
+          </GlobalProvider>
         )}
       </body>
     </html>
   );
 }
+
+export default RootLayout;

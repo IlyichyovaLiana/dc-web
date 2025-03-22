@@ -1,42 +1,24 @@
+"use client";
+
 import { Carousel } from "antd";
-import React from "react";
 
-const bannersData = [
-  {
-    title: "Professional Care For Your Health",
-    subTitle: "Good Health Moves Us Forward",
-    description:
-      "Humanity stands as a cornerstone of professionalism for any doctor. Here at our clinic, we prioritize your holistic well-being, nurturing both your mental and physical health with meticulous care.",
-    image: "/images/bg/slider-bg-1.jpg",
-  },
-  {
-    title: "Professional Care For Your Health",
-    subTitle: "Good Health Moves Us Forward",
-    description:
-      "Humanity stands as a cornerstone of professionalism for any doctor. Here at our clinic, we prioritize your holistic well-being, nurturing both your mental and physical health with meticulous care.",
-    image: "/images/bg/slider-bg-1.jpg",
-  },
-  {
-    title: "Professional Care For Your Health",
-    subTitle: "Good Health Moves Us Forward",
-    description:
-      "Humanity stands as a cornerstone of professionalism for any doctor. Here at our clinic, we prioritize your holistic well-being, nurturing both your mental and physical health with meticulous care.",
-    image: "/images/bg/slider-bg-1.jpg",
-  },
-];
-
-const HeroBanner = () => {
+function HeroBanner({ heroBannerData }) {
   return (
-    <section id="heroBanner" className="container" data-aos="fade-up">
+    <section
+      id="heroBanner"
+      className="container"
+      data-aos="fade-up"
+      style={{ maxHeight: "630px", marginTop: "70px" }}
+    >
       <Carousel
         arrows
         dotPosition="right"
         autoplay
-        infinite={true}
+        infinite
         autoplaySpeed={5000}
         dots={{ className: "carousel-dots" }}
       >
-        {bannersData.map((banner, index) => (
+        {heroBannerData.items.map((banner, index) => (
           <div key={index}>
             <div
               className="banner"
@@ -52,10 +34,10 @@ const HeroBanner = () => {
                   <div className="block">
                     <div className="divider mb-3"></div>
                     <span className="text-uppercase text-sm letter-spacing">
-                      {banner.subTitle}
+                      {banner.title2}
                     </span>
-                    {banner.subTitle && (
-                      <h1 className="mb-3 mt-3">{banner.title}</h1>
+                    {banner.title1 && (
+                      <h1 className="mb-3 mt-3">{banner.title1}</h1>
                     )}
                     <p className="mb-4 pr-5">{banner.description}</p>
                     <div className="btn-container">
@@ -76,6 +58,6 @@ const HeroBanner = () => {
       </Carousel>
     </section>
   );
-};
+}
 
 export default HeroBanner;

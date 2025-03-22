@@ -11,11 +11,12 @@ import DashboardLayout from "./DashboardLayout";
 import Login from "./Login";
 import Header from "./Header";
 import Footer from "./Footer";
+import Head from "./Head";
 
 import AdminHeroBanner from "./admin/AdminHeroBanner";
 import AdminServices from "./admin/AdminServices";
 import AdminBMI from "./admin/AdminBMI";
-import AdminContactUs from "./admin/AdminContactUs";
+import AdminGlobal from "./admin/AdminGlobal";
 import AdminPopularQuestions from "./admin/AdminPopularQuestions";
 import AdminTestimonials from "./admin/AdminTestimonials";
 import AdminAbout from "./admin/AdminAbout";
@@ -40,11 +41,12 @@ export {
   AdminHeroBanner,
   AdminServices,
   AdminBMI,
-  AdminContactUs,
   AdminPopularQuestions,
   AdminTestimonials,
   AdminAbout,
   AdminCounter,
   AdminFeatures,
   AuthGuard,
+  AdminGlobal,
+  Head,
 };

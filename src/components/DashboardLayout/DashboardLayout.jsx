@@ -50,8 +50,8 @@ const DashboardLayout = ({ children }) => {
       label: "BMI",
     },
     {
-      key: RouterPaths.ADMIN_CONTACT_US,
-      label: "Contact Us",
+      key: RouterPaths.ADMIN_GLOBAL,
+      label: "Global",
     },
   ];
 

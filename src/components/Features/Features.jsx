@@ -1,6 +1,7 @@
 import React from "react";
 
-const Features = () => {
+const Features = ({ featuresData }) => {
+  const { section1, section2, section3 } = featuresData;
   return (
     <>
       <section className="features" id="features">
@@ -12,12 +13,9 @@ const Features = () => {
                   <div className="feature-icon mb-4">
                     <i className="icofont icofont-surgeon-alt"></i>
                   </div>
-                  <span>24 Hours Service</span>
-                  <h4 className="mb-3">Online Appoinment</h4>
-                  <p className="mb-4">
-                    We've implemented the principle of family medicine, ensuring
-                    continuous care and support for you and your loved ones.
-                  </p>
+                  <span>{section1.text1}</span>
+                  <h4 className="mb-3">{section1.title}</h4>
+                  <p className="mb-4">{section1.text2}</p>
                   <a href="#contact-us" className="btn btn-main btn-round-full">
                     Make a appoinment
                   </a>
@@ -27,17 +25,20 @@ const Features = () => {
                   <div className="feature-icon mb-4">
                     <i className="icofont icofont-ui-clock"></i>
                   </div>
-                  <span>Timing schedule</span>
-                  <h4 className="mb-3">Working Hours</h4>
+                  <span>{section2.text1}</span>
+                  <h4 className="mb-3">{section2.title}</h4>
                   <ul className="w-hours list-unstyled">
                     <li className="d-flex justify-content-between">
-                      Sun - Wed : <span>7:00 - 18:00</span>
+                      {section2.text2.title1}{" "}
+                      <span>{section2.text2.text1}</span>
                     </li>
                     <li className="d-flex justify-content-between">
-                      Thu - Fri : <span>8:00 - 18:00</span>
+                      {section2.text2.title2}{" "}
+                      <span>{section2.text2.text2}</span>
                     </li>
                     <li className="d-flex justify-content-between">
-                      Sat - sun : <span>9:00 - 18:00</span>
+                      {section2.text2.title3}{" "}
+                      <span>{section2.text2.text3}</span>
                     </li>
                   </ul>
                 </div>
@@ -46,13 +47,9 @@ const Features = () => {
                   <div className="feature-icon mb-4">
                     <i className="icofont icofont-support"></i>
                   </div>
-                  <span>Emegency Cases</span>
-                  <h4 className="mb-3">2-990-770-5550</h4>
-                  <p>
-                    Experience all-time support for emergencies. We embrace the
-                    principle of family medicine, ensuring continuous care.
-                    Connect with us for any urgent need.
-                  </p>
+                  <span>{section3.text1}</span>
+                  <h4 className="mb-3">{section3.title}</h4>
+                  <p>{section3.text2}</p>
                 </div>
               </div>
             </div>

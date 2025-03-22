@@ -1,7 +1,5 @@
 const RouterPaths = {
   HOME: "/",
-  //   ABOUT: "/about",
-  //   CONTACT: "/contact",
   LOGIN: "/login",
   NOT_FOUND: "/not-found",
   ADMIN: "/admin",
@@ -13,7 +11,7 @@ const RouterPaths = {
   ADMIN_TESTIMONIAL: "/admin/testimonial",
   ADMIN_POPULAR_QUESTIONS: "/admin/popularQuestions",
   ADMIN_BMI: "/admin/bmi",
-  ADMIN_CONTACT_US: "/admin/contactUs",
+  ADMIN_GLOBAL: "/admin/global",
 };
 
 export default RouterPaths;

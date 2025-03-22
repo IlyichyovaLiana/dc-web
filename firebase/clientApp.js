@@ -1,4 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAnalytics, isSupported } from "firebase/analytics";
 
 const clientCredentials = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -10,8 +12,19 @@ const clientCredentials = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-const firebaseApp = !getApps().length
-  ? initializeApp(clientCredentials)
-  : getApp();
+const firebaseApp = !getApps().length ? initializeApp(clientCredentials) : getApp();
+
+const db = getFirestore(firebaseApp);
+
+// Ensure getAnalytics only runs in the browser
+let analytics;
+if (typeof window !== "undefined") {
+  isSupported().then((supported) => {
+    if (supported) {
+      analytics = getAnalytics(firebaseApp);
+    }
+  });
+}
 
 export default firebaseApp;
+export { db, analytics };
